@@ -29,6 +29,7 @@ urlpatterns = [
 
 urlpatterns += [
     path("logout/", LogoutView.as_view(next_page="login"), name="logout"),
+]
 
 def home(request):
     return HttpResponse("Projeto Doações: página inicial funcionando!")
