@@ -18,13 +18,17 @@ from django.contrib import admin
 from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 from doacoes.views import login_view  # importa a view diretamente
+from django.http import HttpResponse
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('doacoes/', include('doacoes.urls')),  # Inclui as URLs do app "doacoes"
     path('login/', login_view, name='login'),  # <-- isso faz /login/ funcionar
+    path('', home, name='home'),
 ]
 
 urlpatterns += [
     path("logout/", LogoutView.as_view(next_page="login"), name="logout"),
-]
+
+def home(request):
+    return HttpResponse("Projeto Doações: página inicial funcionando!")
