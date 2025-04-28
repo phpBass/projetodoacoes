@@ -39,6 +39,7 @@ import os
 
 STATIC_URL = '/static/'  # Com a barra no início
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
