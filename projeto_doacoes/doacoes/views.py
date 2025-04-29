@@ -48,6 +48,10 @@ def login_view(request):
         if user is not None:
             login(request, user)
             return redirect("listar_doacoes")  # Redireciona para a página principal
+
+def home(request):
+    return render(request, "home.html")
+
         else:
             messages.error(request, "Usuário ou senha inválidos.")
 
