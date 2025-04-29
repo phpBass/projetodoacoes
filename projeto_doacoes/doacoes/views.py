@@ -55,5 +55,6 @@ def login_view(request):
     return render(request, "doacoes/login.html")
 
 def home(request):
-    return render(request, "home.html")
+    return render(request, "doacoes/home.html")
+
 
