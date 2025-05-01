@@ -41,6 +41,7 @@ import os
 STATIC_URL = '/static/'  # Com a barra no início
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -49,6 +50,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # logo após SecurityMiddleware
+    'django.middleware.security.SecurityMiddleware',
     'doacoes', # <- Instalando nosso file 
 ]
 
