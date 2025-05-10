@@ -44,10 +44,6 @@ STATIC_URL = '/static/'  # Com a barra no início
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # logo após SecurityMiddleware
-    'django.middleware.security.SecurityMiddleware',
-]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -61,12 +57,15 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # <- tem que estar logo depois do SecurityMiddleware
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
 ]
 
 ROOT_URLCONF = 'projeto_doacoes.urls'
