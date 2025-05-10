@@ -37,6 +37,8 @@ LOGIN_URL = '/doacoes/login/'
 
 # Application definition
 import os
+import dj_database_url  # se você estiver usando para o Render
+
 
 STATIC_URL = '/static/'  # Com a barra no início
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
