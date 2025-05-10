@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sistema de Doações{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Sistema de Doações</div>
+            <ul class="nav-links">
+                <li><a href="/doacoes/">Início</a></li>
+                <li><a href="/doacoes/adicionar">Nova Doação</a></li>
+                <li><a href="/doacoes/registro">Cadastro</a></li>
+                <li><a href="/doacoes/login">Login</a></li>
+                <li><a href="/doacoes/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>    
+    <div class="page-container">
+        <div class="content-container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
