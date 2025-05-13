@@ -4,30 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Sistema de Doações{% endblock %}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> <!-- Font Awesome CDN -->
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-
+    <!-- AOS (Animate on Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
-   <nav class="navbar">
-    <div class="nav-container">
-        <div class="nav-logo"><i class="fa-solid fa-hand-holding-heart"></i> Sistema de Doações</div>
-        <ul class="nav-links">
-            <li><a href="/doacoes/"><i class="fa-solid fa-house"></i> Início</a></li>
-            <li><a href="/doacoes/adicionar"><i class="fa-solid fa-circle-plus"></i> Nova Doação</a></li>
-            <li><a href="/doacoes/registro"><i class="fa-solid fa-user-plus"></i> Cadastro</a></li>
-            <li><a href="/doacoes/login"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
-            <li><a href="/doacoes/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
-        </ul>
-    </div>
-    </nav>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fa-solid fa-hand-holding-heart"></i> Sistema de Doações
+            </div>
+            <ul class="nav-links">
+                <li><a href="/doacoes/"><i class="fa-solid fa-house"></i> Início</a></li>
+                <li><a href="/doacoes/adicionar"><i class="fa-solid fa-circle-plus"></i> Nova Doação</a></li>
+                <li><a href="/doacoes/registro"><i class="fa-solid fa-user-plus"></i> Cadastro</a></li>
+                <li><a href="/doacoes/login"><i class="fa-solid fa-right-to-bracket"></i> Login</a></li>
+                <li><a href="/doacoes/logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>    
+
     <div class="page-container">
         <div class="content-container">
             {% block content %}
             {% endblock %}
         </div>
     </div>
+
+    <!-- AOS JS (vem no fim) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // duração da animação em ms
+            once: true     // anima só uma vez ao entrar na tela
+        });
+    </script>
 </body>
 </html>
