@@ -201,3 +201,10 @@ textarea:invalid {
 .nav-links li a:hover {
     color: #d7f4db;
 }
+.nav-links i {
+    margin-right: 6px;
+    color: white; /* ou a cor que preferir */
+}
+.nav-logo i {
+    margin-right: 8px;
+}
