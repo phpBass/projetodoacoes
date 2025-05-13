@@ -3,15 +3,18 @@
 {% block title %}Lista de Doações{% endblock %}
 
 {% block content %}
-    <div class="list-container">
-        <h1>Lista de Doações</h1>
+    <div class="list-container" data-aos="fade-up">
+        <h1 data-aos="zoom-in"><i class="fa-solid fa-hand-holding-heart"></i> Lista de Doações</h1>
 
-        <a href="{% url 'adicionar_doacao' %}" class="btn-link">Adicionar Doação</a>
+        <a href="{% url 'adicionar_doacao' %}" class="btn-link" data-aos="fade-right">
+            <i class="fa-solid fa-circle-plus"></i> Adicionar Doação
+        </a>
 
         {% if doacoes %}
             <ul class="doacoes-list">
                 {% for doacao in doacoes %}
-                    <li class="doacao-item">
+                    <li class="doacao-item" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:"1" }}00">
+                        <i class="fa-solid fa-gift"></i>
                         <strong>{{ doacao.nome_doador }}</strong> doou 
                         <strong>{{ doacao.quantidade }}</strong> - 
                         {{ doacao.descricao }}
@@ -19,7 +22,7 @@
                 {% endfor %}
             </ul>
         {% else %}
-            <p>Não há doações cadastradas.</p>
+            <p data-aos="fade-up"><i class="fa-solid fa-circle-exclamation"></i> Não há doações cadastradas.</p>
         {% endif %}
     </div>
 {% endblock %}
